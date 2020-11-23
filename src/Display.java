@@ -52,6 +52,7 @@ public class Display {
      * Increments the next display (if it exists) on turnover
      */
     private void countNextDisplay() {
+        // todo eat this using the dummy class
         if (this.nextDisplay != null) {
             this.nextDisplay.count();
         }
