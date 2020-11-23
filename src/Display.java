@@ -36,11 +36,32 @@ public class Display {
         // If the amount reaches the limit, turn over to zero
         // and increment the next display if it exists
         if (this.amount >= this.maxAmount) {
-            this.amount = 0;
-            if (this.nextDisplay != null) {
-                this.nextDisplay.count();
-            }
+            this.turnOver();
         }
+    }
+
+    /**
+     * Resets the display to zero and calls the count of the next display
+     */
+    private void turnOver() {
+        this.reset();
+        this.countNextDisplay();
+    }
+
+    /**
+     * Increments the next display (if it exists) on turnover
+     */
+    private void countNextDisplay() {
+        if (this.nextDisplay != null) {
+            this.nextDisplay.count();
+        }
+    }
+
+    /**
+     * Reset the current display
+     */
+    private void reset() {
+        this.amount = 0;
     }
 
     /**
